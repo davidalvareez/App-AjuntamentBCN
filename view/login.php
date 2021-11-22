@@ -9,25 +9,23 @@
     <script src="../js/validacion_login.js"></script>
 </head>
 <body class="login">
+        <h1>¡Inscripción de voluntarios y voluntarias!</h1>
         <div class="row flex-cv">
             <div class="cuadro_login">
                 <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validar();">
                     <h1 class="h1login">Inicio de Sesión</h1>
                     <br>
                     <div class="form-element">
-                        <input class="inputlogin" type="text" id="username" name="username" placeholder="Usuario..."/>
+                        <input class="inputlogin" type="text" id="username" name="username" placeholder="Introduce tu usuario..."/>
                     </div>
                     <br>
                     <div class="form-element">
-                        <input class="inputlogin" type="password" id="password" name="password" placeholder="Contraseña..."/>
+                        <input class="inputlogin" type="password" id="password" name="password" placeholder="Introduce tu contraseña..."/>
                     </div>
                     <br><br>
-                    <button class= "botonlogin" type="submit" name="register" value="register">Iniciar Sesión</button>
-                    <br><br>
-                    <div class="mensajelogin" id="mensaje"></div>
+                    <button class="botonlogin" type="submit" name="register" value="register">Iniciar Sesión</button>
                 </form>
             </div>
         </div>
 </body>
-
 </html>
