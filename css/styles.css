@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    /* font family */
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10% 20px;
+    text-align: center;
+}
+
+:root {
+    --marron1: #271301;
+    --blanco: #fff;
+    --azul2: #0F1923;
+}
+
+
+/*Estilos Buttones*/
+
+button {
+    float: center;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#row-backcolor {
+    background-color: #ffcb85;
+}
+
+
+/*Estilos*/
+
+.cuadro_login {
+    height: 500px;
+    width: 650px;
+    border: 5px solid var(--marron1);
+    background: #cdb8ac;
+    border-color: #511301;
+}
+
+.cuadro_control_sala {
+    height: 515px;
+    width: 650px;
+    border: 5px solid var(--marron1);
+    background: #cdb8ac;
+    border-color: #511301;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cuadro-figura {
+    height: 520px;
+    width: 700px;
+    border: 5px solid var(--azul2);
+    background: #535F80;
+    padding: 10px;
+}
+
+.cuadro-figura h2 {
+    color: #fff;
+}
+
+.flex-cv {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+
+/* TABLA */
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #E1D9BE;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.table td {
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #E1D9BE;
+}
+
+.table tr {
+    border-spacing: 0px 20px;
+    border-left: 1pt solid rgba(255, 255, 255, 0.2);
+    border-right: 1pt solid rgba(255, 255, 255, 0.2);
+    border-top: 1pt solid rgba(255, 255, 255, 0.2);
+}
+
+table tr:hover {
+    background-color: rgba(114, 107, 107, 0.15);
+}
+
+table {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/*Botones*/
+
+.boton {
+    position: relative;
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    float: right;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: #E1D9BE;
+    text-decoration: none;
+    background-color: #3C425C;
+    border-color: #E1D9BE;
+    border-bottom: 5px solid black;
+}
+
+.boton:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+}
+
+.login {
+    background-image: url("../img/img_login.jpg");
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.control_sala {
+    background-image: url("../img/img_login.jpg");
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.fondosala {
+    background-image: url("../img/fondo_sala.jpeg");
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%
+    }
+    100% {
+        background-position: 100%
+    }
+}
+
+.formulario_login {
+    height: 100%;
+    padding: 10%;
+}
+
+.inputlogin {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #906044;
+    background-color: #e6dbd5;
+    outline: none;
+}
+
+.botonlogin {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #906044;
+    background-color: #e6dbd5;
+}
+
+.botonessala {
+    width: 200px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: black;
+    background-color: #fbf7f5;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    position: relative;
+}
+
+.botonessala:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+}
+
+.botonhistorial {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: whitesmoke;
+    background-color: violet;
+}
+
+.mensajelogin {
+    color: black;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.column-3 {
+    float: left;
+    width: 33.3%;
+}
+
+.column-2 {
+    float: left;
+    width: 50%;
+}
+
+.column {
+    float: left;
+    width: 100%;
+    height: 16.7%;
+}
+
+.btnsala {
+    width: 100%;
+    height: 100px;
+    background-color: #cdacb1;
+    border-style: outset;
+    border-color: #FDFFF9;
+    border-radius: 7px;
+    border-bottom: 5px solid black;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    position: relative;
+}
+
+.btnsala:hover {
+    background-color: #acc1cd;
+}
