@@ -71,6 +71,13 @@ button {
 
 /* TABLA */
 
+.tablaeventos {
+    align-content: center;
+    text-emphasis: center;
+    border-radius: 5px;
+    background-color: black;
+}
+
 .table th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -102,6 +109,12 @@ table {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
+.imgevento {
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+}
+
 
 /*Botones*/
 
@@ -109,15 +122,14 @@ table {
     position: relative;
     padding: 5px 10px;
     margin: 0px 10px 10px 0px;
-    float: right;
-    border-radius: 10px;
+    float: center;
+    border-radius: 9px;
     font-size: 15px;
     text-align: center;
-    color: #E1D9BE;
+    color: white;
     text-decoration: none;
-    background-color: #3C425C;
-    border-color: #E1D9BE;
-    border-bottom: 5px solid black;
+    background-color: #4D9C87;
+    border-bottom: 2px solid white;
 }
 
 .boton:active {
@@ -132,10 +144,9 @@ table {
     overflow-y: hidden;
 }
 
-.control_sala {
-    background-image: url("../img/img_login.jpg");
-    overflow-x: hidden;
-    overflow-y: hidden;
+.fondoeventos {
+    background-image: url("../img/img_eventos.jpg");
+    color: white;
 }
 
 .fondosala {
@@ -246,20 +257,6 @@ table {
     height: 16.7%;
 }
 
-.btnsala {
-    width: 100%;
-    height: 100px;
-    background-color: #cdacb1;
-    border-style: outset;
-    border-color: #FDFFF9;
-    border-radius: 7px;
-    border-bottom: 5px solid black;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin: 0px 10px 10px 0px;
-    position: relative;
-}
-
-.btnsala:hover {
-    background-color: #acc1cd;
+.h1eventos {
+    color: black;
 }
