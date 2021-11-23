@@ -152,8 +152,7 @@ table {
 }
 
 .formulario_login {
-    height: 100%;
-    padding: 10%;
+    padding: 5%;
 }
 
 .inputlogin {
@@ -179,6 +178,23 @@ table {
 
 .botonlogin:hover {
     background: #D4233F;
+    color: #fff !important;
+}
+
+.botonregister {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: #e6dbd5;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.botonregister:hover {
+    background: #4D9C87;
     color: #fff !important;
 }
 

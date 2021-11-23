@@ -9,11 +9,11 @@
     <script src="../js/validacion_login.js"></script>
 </head>
 <body class="login">
-        <h1>¡Inscripción de voluntarios y voluntarias!</h1>
+        <h1>¡Regístrate para participar en los eventos!</h1>
         <div class="row flex-cv">
             <div class="cuadro_login">
-                <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validar();">
-                    <h1 class="h1login">Inicio de Sesión</h1>
+                <form class="formulario_login" action="../process/register.proc.php" method="post" onsubmit=" return validar();">
+                    <h1 class="h1login">Regístrate en nuestra web</h1>
                     <br>
                     <div class="form-element">
                         <input class="inputlogin" type="text" id="username" name="username" placeholder="Introduce tu correo.."/>
@@ -23,9 +23,9 @@
                         <input class="inputlogin" type="password" id="password" name="password" placeholder="Introduce tu contraseña..."/>
                     </div>
                     <br><br>
-                    <button class="botonlogin" type="submit" name="login" value="login">Iniciar Sesión</button>
+                    <button class="botonlogin" type="submit" name="login" value="login">Registrarse</button>
                 </form>
-                <button class="botonregister" name="register" value="register" OnClick="location.href='../view/register.php'">Registrarse</button>
+                <button class="botonregister" name="register" value="register" OnClick="location.href='../view/login.php'">Volver al inicio de sesión</button>
             </div>
         </div>
 </body>
