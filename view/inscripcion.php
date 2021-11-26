@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesion</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/validacion_login.js"></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
                     <h1 class="h1login">¡Formulario de Inscripcion!</h1>
                     <br>
                     <?php
-                    if (empty($_SESSION['email'])) {
+                    if (empty($_SESSION['dni'])) {
                         ?>
                         <div class="form-element">
                             <input class="inputlogin" type="text" id="dni" name="dni" placeholder="Introduce tu DNI..."/>
@@ -32,7 +33,7 @@
                     }else{
                         ?>
                         <div class="form-element">
-                            <input class="inputlogin" type="text" id="dni" name="dni" value="<?php echo $_SESSION['email']; ?>"/>
+                            <input class="inputlogin" type="text" id="dni" name="dni" value="<?php echo $_SESSION['dni']; ?>"/>
                         </div>
                         <?php
                     }
