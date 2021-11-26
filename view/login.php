@@ -9,7 +9,7 @@
     <script src="../js/validacion_login.js"></script>
 </head>
 <body class="login">
-        <h1>¡Inscripción de voluntarios y voluntarias!</h1>
+        <h1 class= "h1_login">Inicia sesión con tu cuenta de administrador</h1>
         <div class="row flex-cv">
             <div class="cuadro_login">
                 <form class="formulario_login" action="../process/login.proc.php" method="post" onsubmit=" return validar();">
@@ -25,7 +25,6 @@
                     <br><br>
                     <button class="botonlogin" type="submit" name="login" value="login">Iniciar Sesión</button>
                 </form>
-                <button class="botonregister" name="register" value="register" OnClick="location.href='../view/register.php'">Registrarse</button>
             </div>
         </div>
 </body>

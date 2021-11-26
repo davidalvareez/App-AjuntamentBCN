@@ -1,7 +1,9 @@
 function validar() {
+    let dni = document.getElementById('username').value
+    let nombre = document.getElementById('username').value
+    let apellido = document.getElementById('username').value
+    let telefono = document.getElementById('username').value
     let user = document.getElementById('username').value
-    let pass = document.getElementById('password').value
-    let mensaje = document.getElementById('mensaje')
 
     if (user == '' && pass == '') {
         mensaje.innerHTML = 'Debes rellenar los campos: Usuario y Contraseña.'

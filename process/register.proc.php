@@ -1,25 +1,26 @@
 <?php
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-    //falta hacer que si estan vacios los campos no haga todo esto
+    if (!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['dni']) && !empty($_POST['telefono']) && !empty($_POST['evento'])) {
     include '../services/conexion.php';
-    $user=$_POST['username'];
-    $pass=$_POST['password'];
-
+    session_start();
+    $nombre=$_POST['nombre'];
+    $apellido=$_POST['apellido'];
+    $telefono=$_POST['telefono'];
+    $dni=strtoupper($_POST['dni']);
+    $evento=$_POST['evento'];
+/*
     $consulta=$pdo->prepare("SELECT * FROM tbl_perfil WHERE email = :email and pass = :pass");  //preparas la consulta del elemento cuya existencia deseas validar   
-    $consulta->bindParam(':email', $user);
-    $consulta->bindParam(':pass', $pass);
+    $consulta->bindParam(':email', $email);
+    $consulta->bindParam(':pass', md5($pass));
     $consulta->execute();
     $validaruser=$consulta->fetchColumn();
-    
-    if ($validaruser) {
-        //El usuario ya ha sido registrado
-        //enviar msg en el login o en el diciendo que esta registrado
-        header("Location:../view/login.php");
-    }else {
         //El usuario NO ha sido registrado
-        //Insertar el usuario en la base de datos y redirigir a la pagina donde se ven eventos
-        header("Location:../view/listaeventos.php");
-    }                             
+        $consulta=$pdo->prepare("INSERT INTO tbl_perfil (nombre,apellido,email,pass,tipo_user) VALUES (:nombre, :apellido, :email, :pass, 1)");  //preparas la consulta del elemento cuya existencia deseas validar   
+        $consulta->bindParam(':nombre', $nombre);
+        $consulta->bindParam(':apellido', $apellido);
+        $consulta->bindParam(':email', $email);
+        $consulta->bindParam(':pass', md5($pass));
+        $consulta->execute();
+        header("Location:../view/eventosapuntado.php"); */                           
 }else {
-    echo "xd";
+    header("location:../view/incripcion.php");
 }

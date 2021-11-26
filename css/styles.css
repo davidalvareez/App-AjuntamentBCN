@@ -1,6 +1,9 @@
+/*estilos globales y letras*/
+
 * {
     box-sizing: border-box;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: black;
 }
 
 body {
@@ -8,15 +11,92 @@ body {
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
-    padding-top: 32px;
+    background-color: wheat;
 }
 
-button {
-    float: center;
+.h1_eventos {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.h1_login {
+    margin-top: 3%;
+    margin-bottom: 0%;
+}
+
+.h1_evento_registrado {
+    margin-top: 2%;
+    margin-bottom: 4%;
 }
 
 
-/* Clear floats after the columns */
+/*Barra de navegacion horizontal*/
+
+.menu {
+    width: 100%;
+    padding: 0;
+    top: 0;
+    width: 100%;
+    position: sticky;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4D9C87;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    text-decoration: none
+}
+
+li {
+    float: left;
+    text-decoration: none
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #4CAF50;
+    text-decoration: none;
+}
+
+li:last-child {
+    border-right: none;
+    float: right;
+    text-decoration: none
+}
+
+.activo {
+    background-color: #4CAF50;
+    text-decoration: none
+}
+
+
+/*fin barra de navegacion*/
+
+
+/*contenido de la pagina, div principal*/
+
+.contenido {
+    width: 100%;
+    height: 100%;
+}
+
+.contenido_centrado {
+    align-items: center;
+    align-content: center;
+}
 
 .row:after {
     content: "";
@@ -28,38 +108,6 @@ button {
     background-color: #ffcb85;
 }
 
-
-/*Estilos*/
-
-.cuadro_login {
-    height: 500px;
-    width: 650px;
-    border: 5px solid #D4233F;
-    background: #E7E2CB;
-}
-
-.cuadro_control_sala {
-    height: 515px;
-    width: 650px;
-    border: 5px solid var(--marron1);
-    background: #cdb8ac;
-    border-color: #511301;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.cuadro-figura {
-    height: 520px;
-    width: 700px;
-    border: 5px solid var(--azul2);
-    background: #535F80;
-    padding: 10px;
-}
-
-.cuadro-figura h2 {
-    color: #fff;
-}
-
 .flex-cv {
     display: flex;
     justify-content: center;
@@ -69,67 +117,43 @@ button {
 }
 
 
-/* TABLA */
+/*fin div principal*/
 
-.tablaeventos {
-    align-content: center;
-    text-emphasis: center;
-    border-radius: 5px;
-    background-color: black;
+
+/* tablas*/
+
+.tabla_principal {
+    width: 100%;
 }
 
-.table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    color: #E1D9BE;
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.table td {
-    padding: 8px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    color: #E1D9BE;
-}
-
-.table tr {
-    border-spacing: 0px 20px;
-    border-left: 1pt solid rgba(255, 255, 255, 0.2);
-    border-right: 1pt solid rgba(255, 255, 255, 0.2);
-    border-top: 1pt solid rgba(255, 255, 255, 0.2);
-}
-
-table tr:hover {
-    background-color: rgba(114, 107, 107, 0.15);
-}
-
-table {
-    background-color: rgba(0, 0, 0, 0.05);
+.tabla_evento {
+    width: 100%;
+    margin-top: 2%;
 }
 
 .imgevento {
-    width: 500px;
-    height: 300px;
+    width: 700px;
+    height: 500px;
     border-radius: 5px;
 }
+
+.tablaadmin {
+    width: 100%;
+}
+
+
+/*fin tablas*/
 
 
 /*Botones*/
 
 .boton {
-    position: relative;
-    padding: 5px 10px;
-    margin: 0px 10px 10px 0px;
     float: center;
     border-radius: 9px;
-    font-size: 15px;
+    font-size: 25px;
     text-align: center;
-    color: white;
-    text-decoration: none;
     background-color: #4D9C87;
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid black;
 }
 
 .boton:active {
@@ -138,6 +162,34 @@ table {
     border-bottom: 1px solid;
 }
 
+
+/*fin botones*/
+
+
+/*cuadro de login e inscripción*/
+
+.cuadro_login {
+    margin-top: 3%;
+    width: 650px;
+    height: 500px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+}
+
+.cuadro_inscripcion {
+    width: 650px;
+    height: 700px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+    margin-top: 4%;
+}
+
+
+/*fin cuadro logins e inscripción*/
+
+
+/*estilos a formularios*/
+
 .login {
     background-image: url("../img/img_login.jpg");
     overflow-x: hidden;
@@ -145,25 +197,15 @@ table {
 }
 
 .fondoeventos {
-    background-image: url("../img/img_eventos.jpg");
-    color: white;
-}
-
-.fondosala {
-    background-image: url("../img/fondo_sala.jpeg");
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0%
-    }
-    100% {
-        background-position: 100%
-    }
+    background-color: white;
 }
 
 .formulario_login {
-    padding: 5%;
+    padding: 10%;
+}
+
+.formulario_inscripcion {
+    padding: 10%;
 }
 
 .inputlogin {
@@ -192,11 +234,11 @@ table {
     color: #fff !important;
 }
 
-.botonregister {
+.botonloginvolver {
     width: 300px;
     height: 45px;
     border-radius: 7px;
-    border-color: #D4233F;
+    border-color: #1564cc;
     background-color: #e6dbd5;
     font-size: 15px;
     font-weight: 500;
@@ -204,27 +246,9 @@ table {
     position: relative;
 }
 
-.botonregister:hover {
-    background: #4D9C87;
+.botonloginvolver:hover {
+    background: #1564cc;
     color: #fff !important;
-}
-
-.botonessala {
-    width: 200px;
-    height: 45px;
-    border-radius: 7px;
-    border-color: black;
-    background-color: #fbf7f5;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin: 0px 10px 10px 0px;
-    position: relative;
-}
-
-.botonessala:active {
-    transform: translate(0px, 5px);
-    -webkit-transform: translate(0px, 5px);
-    border-bottom: 1px solid;
 }
 
 .botonhistorial {
@@ -235,28 +259,21 @@ table {
     background-color: violet;
 }
 
+.lider {
+    color: black;
+    align-content: right;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.divlogout {
+    align-content: right;
+    text-align: right;
+    padding-right: 20px;
+}
+
 .mensajelogin {
     color: black;
     font-size: 20px;
     text-decoration: underline;
-}
-
-.column-3 {
-    float: left;
-    width: 33.3%;
-}
-
-.column-2 {
-    float: left;
-    width: 50%;
-}
-
-.column {
-    float: left;
-    width: 100%;
-    height: 16.7%;
-}
-
-.h1eventos {
-    color: black;
 }
