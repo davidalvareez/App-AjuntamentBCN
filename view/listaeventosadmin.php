@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Eventos BCN</title>
 </head>
-<body class="fondoeventos">
+<body>
     <table class="tablaadmin">
         <td>
             <h2 class="h1eventos">Bienvenido: <?php echo $_SESSION['nombre']; ?> </h2></li>
         </td>
         <td>
-            <button class="boton" OnClick="location.href='../process/logout.proc.php'"><p>Logout</p></button></li>  
+            <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button></li>  
         </td>
     </table>
     <h1 class="h1eventos">EVENTOS DISPONIBLES</h1>
@@ -31,15 +31,16 @@
                     echo "<tr>";
                         echo "<td><img class='imgevento' src='{$row['img']}'></td>";
                         echo "<td>";
-                        echo "<p>{$row['titulo']}</p>";
-                        echo "<p>{$row['fecha']}</p>";
-                        echo "<button class='boton' OnClick='location.href='../view/evento.php' '>MAS INFO</button>";
+                        echo "<h2>{$row['titulo']}</h2>";
+                        echo "<h2>{$row['fecha']}</h2>";
+                        echo "<br>";
+                        echo "<button class='botongeneral' OnClick='location.href='../view/evento.php' '>Mas informacion</button>";
                         if ($_SESSION['tipo_user']==2) {
                             echo "<td>";
-                            echo "<button type='submit'>Modificar Evento</button>";
+                            echo "<button class='botonmodif' type='submit'>Modificar Evento</button>";
                             echo "</td>";
                             echo "<td>";
-                            echo "<button type='submit'>Eliminar Evento</button>";
+                            echo "<button class='botoneliminar' type='submit'>Eliminar Evento</button>";
                             echo "</td>";
                         }else{
                             echo "";

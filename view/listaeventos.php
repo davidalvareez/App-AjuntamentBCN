@@ -40,7 +40,7 @@
                         echo "<h1>{$row['fecha']}</h1>";
                         echo "<br>";
                     ?>
-                        <button class="boton" onclick="location.href='../view/evento.php?evento=<?php echo $row['id']; ?>'">Mas informacion</button>
+                        <button class="botongeneral" onclick="location.href='../view/evento.php?evento=<?php echo $row['id']; ?>'">Mas informacion</button>
                     <?php
                         echo "</td>";
                     echo "</tr>";
