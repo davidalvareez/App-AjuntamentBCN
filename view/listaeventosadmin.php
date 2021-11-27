@@ -24,7 +24,7 @@
     <div class="row flex-cv">
         <table class="tablaeventos">
             <?php
-                $sentencia=$pdo->prepare("SELECT titulo,fecha,img FROM tbl_eventos");
+                $sentencia=$pdo->prepare("SELECT id,titulo,descripcion,img,DATE_FORMAT(fecha,'%d/%m/%Y') as fecha FROM tbl_eventos");
                 $sentencia->execute();
                 $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($eventos as $row) {

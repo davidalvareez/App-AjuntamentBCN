@@ -1,9 +1,14 @@
 <?php
-    include '../services/conexion.php';
+    require_once '../services/conexion.php';
     session_start();
     /* Controla que la sesión esté iniciada */
     //if (!$_SESSION['nombre']=="") {
-        $evento=$_GET['evento'];
+     $evento=$_GET['evento'];
+     if (empty($_SESSION['dni'])) {
+         $dni='';
+     }else{
+         $dni=$_SESSION['dni'];
+     }
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,10 +50,26 @@
                             echo "<p>{$row['descripcion']}</p>";
                             echo "<p>Fecha y hora: {$row['fecha']} a las {$row['hora']}. </p>";
                             echo "<p>Numero de participantes: {$row['capactual']}/{$row['capmax']}</p>";
-                ?>
-                        <button class="botongeneral" onclick="location.href='../view/inscripcion.php?evento=<?php echo $row['id']; ?>'">Inscribirme</button>
-                        <br><br>
-                   <?php
+                            //Si la capacidad es igual que la máxima quitamos el boton de inscripción
+                            if($row['capactual']==$row['capmax']){
+                                echo "";
+                            }else{
+                                //En caso contrario ahora comprobamos si el usuario está inscrito en caso de que si le quitamos el boton y decimos que está inscrito
+                                $inscripcion=$pdo->prepare("SELECT dni, id_evento FROM tbl_registroevento WHERE dni='{$dni}' AND  id_evento=$evento");
+                                $inscripcion->execute();
+                                $comprobacion=$inscripcion->fetchAll(PDO::FETCH_ASSOC);
+                                if (empty($comprobacion)) {
+                                    //Si no encuentra nada es que la sentencia está vacia entonces el usuario no está registrado y saldrá el boton
+                                    ?>
+                                        <button class="botongeneral" onclick="location.href='../view/inscripcion.php?evento=<?php echo $row['id']; ?>'">Inscribirme</button>
+                                        <br><br>
+                                    <?php
+                                }else{
+                                    echo "Ya estás inscrito";
+                                }
+                                ?>
+                                <?php
+                            }
                             echo "</td>";
                         echo "</tr>";
                     }
