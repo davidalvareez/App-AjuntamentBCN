@@ -147,74 +147,21 @@ li:last-child {
 
 /*Botones*/
 
-.boton {
-    float: center;
-    border-radius: 9px;
-    font-size: 25px;
-    text-align: center;
-    background-color: #4D9C87;
-    border-bottom: 3px solid black;
-}
-
-.boton:active {
-    transform: translate(0px, 5px);
-    -webkit-transform: translate(0px, 5px);
-    border-bottom: 1px solid;
-}
-
-
-/*fin botones*/
-
-
-/*cuadro de login e inscripción*/
-
-.cuadro_login {
-    margin-top: 3%;
-    width: 650px;
-    height: 500px;
-    border: 5px solid #D4233F;
-    background: #E7E2CB;
-}
-
-.cuadro_inscripcion {
-    width: 650px;
-    height: 700px;
-    border: 5px solid #D4233F;
-    background: #E7E2CB;
-    margin-top: 4%;
-}
-
-
-/*fin cuadro logins e inscripción*/
-
-
-/*estilos a formularios*/
-
-.login {
-    background-image: url("../img/img_login.jpg");
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.fondoeventos {
-    background-color: white;
-}
-
-.formulario_login {
-    padding: 10%;
-}
-
-.formulario_inscripcion {
-    padding: 10%;
-}
-
-.inputlogin {
-    width: 300px;
+.botongeneral {
+    width: 150px;
     height: 45px;
     border-radius: 7px;
-    border-color: #D4233F;
-    background-color: #e6dbd5;
-    outline: none;
+    border-color: #4D9C87;
+    background-color: wheat;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    color: black;
+}
+
+.botongeneral:hover {
+    background: #4D9C87;
+    color: #fff !important;
 }
 
 .botonlogin {
@@ -257,6 +204,97 @@ li:last-child {
     border-radius: 7px;
     border-color: whitesmoke;
     background-color: violet;
+}
+
+.botoneliminar {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: wheat;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    position: relative;
+    color: black;
+}
+
+.botoneliminar:hover {
+    background: #D4233F;
+    color: #fff !important;
+}
+
+.botonmodif {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #1564cc;
+    background-color: wheat;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    position: relative;
+    color: black;
+}
+
+.botonmodif:hover {
+    background: #1564cc;
+    color: #fff !important;
+}
+
+
+/*fin botones*/
+
+
+/*cuadro de login e inscripción*/
+
+.cuadro_login {
+    margin-top: 3%;
+    width: 650px;
+    height: 500px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+}
+
+.cuadro_inscripcion {
+    width: 650px;
+    height: 700px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+    margin-top: 4%;
+}
+
+
+/*fin cuadro logins e inscripción*/
+
+
+/*estilos a formularios*/
+
+.login {
+    background-image: url("../img/img_login.jpg");
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.fondoeventos {
+    background-color: white;
+}
+
+.formulario_login {
+    padding: 6%;
+}
+
+.formulario_inscripcion {
+    padding: 10%;
+}
+
+.inputlogin {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: #e6dbd5;
+    outline: none;
 }
 
 .lider {

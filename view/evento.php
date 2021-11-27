@@ -46,7 +46,7 @@
                             echo "<p>Fecha y hora: {$row['fecha']} a las {$row['hora']}. </p>";
                             echo "<p>Numero de participantes: {$row['capactual']}/{$row['capmax']}</p>";
                 ?>
-                        <button class="boton" onclick="location.href='../view/inscripcion.php?evento=<?php echo $row['id']; ?>'">Inscribirme</button>
+                        <button class="botongeneral" onclick="location.href='../view/inscripcion.php?evento=<?php echo $row['id']; ?>'">Inscribirme</button>
                         <br><br>
                    <?php
                             echo "</td>";

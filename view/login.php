@@ -25,6 +25,8 @@
                     </div>
                     <br><br>
                     <button class="botonlogin" type="submit" name="login" value="login">Iniciar Sesión</button>
+                    <br><br><br>
+                    <button class="botonloginvolver" onclick="location.href='../view/listaeventos.php'">Volver a la lista de eventos</button>
                 </form>
             </div>
         </div>
