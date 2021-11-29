@@ -65,7 +65,9 @@
                                         <br><br>
                                     <?php
                                 }else{
-                                    echo "Ya estás inscrito";
+                                    ?>
+                                        <button class="botonquitarinscripcion" onclick="location.href='../process/quitinscripcion.proc.php?evento=<?php echo $row['id']; ?>&dni=<?php echo $comprobacion[0]['dni']; ?>'">Quitar inscripcion</button>
+                                    <?php
                                 }
                                 ?>
                                 <?php

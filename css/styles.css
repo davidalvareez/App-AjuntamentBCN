@@ -30,6 +30,16 @@ body {
     margin-bottom: 4%;
 }
 
+.menu_crear_logout {
+    float: right;
+    margin-top: 2%;
+}
+
+.menu_nombre_admin {
+    float: left;
+    margin-left: 3%;
+}
+
 
 /*Barra de navegacion horizontal*/
 
@@ -80,6 +90,10 @@ li:last-child {
 .activo {
     background-color: #4CAF50;
     text-decoration: none
+}
+
+.td_espacioimg_eventos {
+    padding-bottom: 70px;
 }
 
 
@@ -242,6 +256,40 @@ li:last-child {
     color: #fff !important;
 }
 
+.botonyainscrito {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #4D9C87;
+    background-color: #e6dbd5;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.botonyainscrito:hover {
+    background: #4D9C87;
+    color: #fff !important;
+}
+
+.botonquitarinscripcion {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: wheat;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    color: black;
+}
+
+.botonquitarinscripcion:hover {
+    background: #D4233F;
+    color: #fff !important;
+}
+
 
 /*fin botones*/
 
@@ -258,9 +306,27 @@ li:last-child {
 
 .cuadro_inscripcion {
     width: 650px;
-    height: 700px;
+    height: 650px;
     border: 5px solid #D4233F;
     background: #E7E2CB;
+    margin-top: 4%;
+}
+
+.cuadro_verificar_inscripcion {
+    width: 650px;
+    height: 400px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+    padding-top: 1%;
+    margin-top: 13%;
+}
+
+.cuadro_modificar_evento {
+    width: 650px;
+    height: 800px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+    padding-top: 2%;
     margin-top: 4%;
 }
 
@@ -285,7 +351,7 @@ li:last-child {
 }
 
 .formulario_inscripcion {
-    padding: 10%;
+    padding: 3%;
 }
 
 .inputlogin {
@@ -295,6 +361,16 @@ li:last-child {
     border-color: #D4233F;
     background-color: #e6dbd5;
     outline: none;
+}
+
+.inputlogin_descripcion {
+    width: 300px;
+    height: 100px;
+    border-radius: 7px;
+    border-color: #D4233F;
+    background-color: #e6dbd5;
+    outline: none;
+    resize: none;
 }
 
 .lider {

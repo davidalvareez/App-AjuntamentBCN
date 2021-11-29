@@ -96,6 +96,15 @@
                     $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($eventos as $row) {
                 ?>
+                    <?php
+                        if(!empty($_SESSION['dni'])){
+                        }else{
+                            ?>
+                                <button class="botonyainscrito" onclick="location.href='../view/verificarinscripcion.php?evento=<?php echo $row['id']; ?>'" type="submit" name="inscripcion" value="inscripcion">Ya estoy inscrito</button>
+                                <br><br>
+                            <?php
+                        }
+                    ?>
                     <button class="botonloginvolver" onclick="location.href='../view/evento.php?evento=<?php echo $row['id']; ?>'">Volver al evento</button>
                 <?php
                     }

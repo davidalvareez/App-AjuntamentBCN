@@ -13,11 +13,12 @@
 </head>
 <body>
     <table class="tablaadmin">
-        <td>
+        <td class="menu_nombre_admin">
             <h2 class="h1eventos">Bienvenido: <?php echo $_SESSION['nombre']; ?> </h2></li>
         </td>
-        <td>
-            <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button></li>  
+        <td class="menu_crear_logout">
+            <button class="botongeneral" OnClick="location.href='../view/crearevento.php'">Crear evento</button>
+            <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
         </td>
     </table>
     <h1 class="h1eventos">EVENTOS DISPONIBLES</h1>
@@ -29,18 +30,21 @@
                 $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($eventos as $row) {
                     echo "<tr>";
-                        echo "<td><img class='imgevento' src='{$row['img']}'></td>";
+                        echo "<td class='td_espacioimg_eventos'><img class='imgevento' src='{$row['img']}'></td>";
                         echo "<td>";
                         echo "<h2>{$row['titulo']}</h2>";
                         echo "<h2>{$row['fecha']}</h2>";
                         echo "<br>";
-                        echo "<button class='botongeneral' OnClick='location.href='../view/evento.php' '>Mas informacion</button>";
                         if ($_SESSION['tipo_user']==2) {
                             echo "<td>";
-                            echo "<button class='botonmodif' type='submit'>Modificar Evento</button>";
+                            ?>
+                            <button class="botonmodif" onclick="location.href='../view/modificarformulario.php?evento=<?php echo $row['id']; ?>'">Modificar evento</button>
+                            <?php
                             echo "</td>";
                             echo "<td>";
-                            echo "<button class='botoneliminar' type='submit'>Eliminar Evento</button>";
+                            ?>
+                            <button class="botoneliminar" onclick="location.href='../process/delevent.proc.php?evento=<?php echo $row['id']; ?>'">Eliminar evento</button>
+                            <?php
                             echo "</td>";
                         }else{
                             echo "";

@@ -9,7 +9,14 @@
     $telefono=$_POST['telefono'];
     $_SESSION['telefono']=$telefono;
     $dni=strtoupper($_POST['dni']);
-    $_SESSION['dni']=$dni;
+    $letra = substr($dni, -1);
+	$numeros = substr($dni, 0, -1);
+	if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
+        $_SESSION['dni']=$dni;
+	}else{
+        //No sabemos que hacer con el por ahora se deja así
+        exit("Te has inventado el dni, te denuncio a la policia");
+	}
     $evento=$_POST['evento'];
     //Comprobamos si el DNI existe
     $consulta=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni = :dni");   
@@ -46,15 +53,7 @@
             echo "Fallo: " . $e->getMessage();
         }
         //El dni al ser unico solo le añadimos el evento correspondiente
-    }
-    /*
-        //El usuario NO ha sido registrado
-        $consulta=$pdo->prepare("INSERT INTO tbl_perfil (nombre,apellido,email,pass,tipo_user) VALUES (:nombre, :apellido, :email, :pass, 1)");  //preparas la consulta del elemento cuya existencia deseas validar   
-        $consulta->bindParam(':nombre', $nombre);
-        $consulta->bindParam(':apellido', $apellido);
-        $consulta->bindParam(':email', $email);
-        $consulta->bindParam(':pass', md5($pass));
-        $consulta->execute();   */                         
+    }                       
 }else {
     header("location:../view/incripcion.php");
 }

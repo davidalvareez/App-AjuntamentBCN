@@ -34,7 +34,7 @@
                 $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($eventos as $row) {
                     echo "<tr>";
-                        echo "<td><img class='imgevento' src='{$row['img']}'></td>";
+                        echo "<td class='td_espacioimg_eventos'><img class='imgevento' src='{$row['img']}'></td>";
                         echo "<td>";
                         echo "<h1>{$row['titulo']}</h1>";
                         echo "<h1>{$row['fecha']}</h1>";
