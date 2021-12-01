@@ -22,7 +22,7 @@
                    <a href="../view/eventosapuntado.php">¿A que me he apuntado?</a>
                </li>
                <li>
-                   <a href="../view/login.php">Login</a>
+                   <a href="../process/logout.proc.php">Logout</a>
                </li>
            </ul>     
     </div>
@@ -30,19 +30,17 @@
            <h1 class="h1_eventos">TODOS LOS PARTICIPANTES POSIBLES</h1>
            <form action="../view/vistaparticipantes.php" method="POST">
                     <input type="text" name="dni" placeholder="Indica el DNI">
-                    <input type="submit" value="Filtrar" name="filtro"> 
+                    <input type="submit" value="Filtrar" name="filtrar"> 
                 </form>
             <?php
-            if (isset($_POST['filtro'])){
-                $voluntario=$pdo->prepare("SELECT * FROM tbl_voluntarios WHERE dni like '%{$_POST['dni']}%'");
+            if (isset($_POST['filtrar'])){
+                $voluntario=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni LIKE '%{$_POST['dni']}%'");
                 $voluntario->execute();
                 $voluntarios=$voluntario->fetchAll(PDO::FETCH_ASSOC);
-                print_r($voluntarios);
             }else{
-                $voluntario=$pdo->prepare("SELECT * FROM tbl_voluntarios");
+                $voluntario=$pdo->prepare("SELECT * FROM tbl_voluntario");
                 $voluntario->execute();
                 $voluntarios=$voluntario->fetchAll(PDO::FETCH_ASSOC);
-                print_r($voluntarios);
             }
             ?>
            <table class="tabla_principal">
@@ -58,6 +56,8 @@
                     <td><?php echo "{$row['dni']}";?></td>
                     <td><?php echo "{$row['nombre']}";?></td>
                     <td><?php echo "{$row['apellido']}";?></td>
+                    <td><button class="botonmodif" onclick="location.href='../view/modificarvoluntario.php?dni=<?php echo $row['dni']; ?>'">Modificar usuario</button></td>
+                    <td><button class="botoneliminar" onclick="location.href='../process/delvoluntario.proc.php?dni=<?php echo $row['dni']; ?>'">Eliminar usuario</button></td>
                 </tr>
                 <?php } ?>
             </table>

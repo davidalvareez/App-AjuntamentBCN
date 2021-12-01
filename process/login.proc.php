@@ -12,7 +12,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     try {
             if (!empty($comprobacion)) {
                 foreach ($comprobacion as $row) {
-                    $_SESSION['nombre']=$row['nombre'];
+                    $_SESSION['username']=$row['nombre'];
                     $_SESSION['tipo_user']=2;
                  }   
                 //print_r($comprobacion);

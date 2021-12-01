@@ -29,7 +29,7 @@
         try{
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->beginTransaction();
-            $pdo->exec("INSERT INTO tbl_voluntario (dni, nombre, apellido, telefono) values ('{$dni}','{$nombre}','{$apellido}','{$telefono}')");
+            $pdo->exec("INSERT INTO tbl_voluntario (dni, nombre, apellido, telefono) values ('{$dni}','{$nombre}','{$apellido}','+34{$telefono}')");
             $pdo->exec("INSERT INTO tbl_registroevento (dni,id_evento) values ('{$dni}',$evento)");
             $pdo->exec("UPDATE tbl_eventos SET capactual=capactual+1 WHERE id=$evento");
             $pdo->commit();
