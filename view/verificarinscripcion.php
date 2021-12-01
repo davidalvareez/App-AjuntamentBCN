@@ -12,7 +12,7 @@
 <body>
     <div class="row flex-cv">
         <div class="cuadro_verificar_inscripcion">
-            <form action="../process/verificardni.proc.php" method="post">
+            <form action="../process/verificardni.proc.php" method="post" onsubmit="return validar_dni();">
                     <h1 class="h1login">Verificación de DNI</h1>
                     <br>
                     <div class="form-element">

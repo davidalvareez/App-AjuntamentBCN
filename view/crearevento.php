@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/validacion_login.js"></script>
     <title>Modificar</title>
 </head>
 <body>
     <div class="contenido">
         <div class="row flex-cv">
             <div class="cuadro_modificar_evento">
-                <form class="formulario_inscripcion"  action="../process/crearevent.proc.php" method="post">
+                <form class="formulario_inscripcion"  action="../process/crearevent.proc.php" method="post" enctype="multipart/form-data" onsubmit="return eventos()">
                     <h1 class="h1login">Formulario crear evento</h1>
                         <br>
                         <div class="form-element">
@@ -31,7 +33,7 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="number" min="500" id="capmax" name="capmax" placeholder="Introduce la capacidad maxima del evento"/>
+                            <input class="inputlogin" type="number" min="500" max="9999" id="capmax" name="capmax" placeholder="Introduce la capacidad maxima del evento"/>
                         </div>
                         <br>
                         <div class="form-element">

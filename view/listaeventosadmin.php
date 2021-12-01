@@ -17,6 +17,7 @@
             <h2 class="h1eventos">Bienvenido: <?php echo $_SESSION['nombre']; ?> </h2></li>
         </td>
         <td class="menu_crear_logout">
+            <button class="botongeneral" OnClick="location.href='../view/vistaparticipantes.php'">Ver participantes</button>
             <button class="botongeneral" OnClick="location.href='../view/crearevento.php'">Crear evento</button>
             <button class="botongeneral" OnClick="location.href='../process/logout.proc.php'">Logout</button>  
         </td>
