@@ -1,6 +1,9 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    if (!$_SESSION['tipo_user']==2) {
+        header("location:login.php");
+    }
     if (empty($_GET['dni'])){
         header("location:../view/vistaparticipantes.php");
     }else{
@@ -22,12 +25,12 @@
     <script src="../js/validacion_login.js"></script>
     <title>Modificar</title>
 </head>
-<body>
+<body class="fondoimg">
     <div class="contenido">
         <div class="row flex-cv">
-            <div class="cuadro_modificar_evento">
+            <div class="cuadro_modificar_voluntario">
                 <form class="formulario_inscripcion"  action="../process/upvoluntario.proc.php" method="post" enctype="multipart/form-data" onsubmit="return eventos()">
-                    <h1 class="h1login">¡Formulario modificar Evento!</h1>
+                    <h1 class="h1login">¡Formulario modificar voluntario!</h1>
                         <br>
                         <?php
                             if (empty($comprobacion)) {

@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/validacion_login.js"></script>
 </head>
-<body>
+<body class="login">
     <div class="row flex-cv">
         <div class="cuadro_verificar_inscripcion">
             <form action="../process/verificardni.proc.php" method="post" onsubmit="return validar_dni();">
@@ -20,10 +20,9 @@
                         <br><br>
                     </div>
                     <div class="form-element">
-                        <button class="botonlogin" type="submit" name="login" value="Enviar">Verificar</button>
+                        <button class="botonlogin" type="submit" name="login" value="Enviar">Verificar</button><br><br><br>
                     </div>
             </form>
-            <br><br>
             <?php
             if (!empty($_GET['evento'])){
                 $evento=$_GET['evento'];
@@ -32,7 +31,9 @@
                 <?php
             }
             else {
-                //echo "Vacio";
+                ?>
+                <button class="botonloginvolver" onclick="location.href='../view/listaeventos.php'" type="submit" name="volver" value="volver">Volver a la lista de eventos</button>
+                <?php
             }
             ?>
         </div>

@@ -14,6 +14,10 @@ body {
     background-color: wheat;
 }
 
+.fondoimg {
+    background-image: url('../img/img_login.jpg');
+}
+
 .h1_eventos {
     text-align: center;
     padding-top: 1%;
@@ -96,6 +100,10 @@ li:last-child {
     padding-bottom: 70px;
 }
 
+.tdvoluntarios {
+    width: 100px;
+}
+
 
 /*fin barra de navegacion*/
 
@@ -138,6 +146,7 @@ li:last-child {
 
 .tabla_principal {
     width: 100%;
+    padding-left: 40px;
 }
 
 .tabla_evento {
@@ -290,6 +299,23 @@ li:last-child {
     color: #fff !important;
 }
 
+.botonfiltro {
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #4D9C87;
+    background-color: wheat;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 1s ease;
+    color: black;
+}
+
+.botonfiltro:hover {
+    background: #4D9C87;
+    color: #fff !important;
+}
+
 
 /*fin botones*/
 
@@ -310,6 +336,7 @@ li:last-child {
     border: 5px solid #D4233F;
     background: #E7E2CB;
     margin-top: 4%;
+    margin-bottom: 2%;
 }
 
 .cuadro_verificar_inscripcion {
@@ -318,7 +345,7 @@ li:last-child {
     border: 5px solid #D4233F;
     background: #E7E2CB;
     padding-top: 1%;
-    margin-top: 13%;
+    margin-top: 10%;
 }
 
 .cuadro_modificar_evento {
@@ -327,7 +354,16 @@ li:last-child {
     border: 5px solid #D4233F;
     background: #E7E2CB;
     padding-top: 2%;
-    margin-top: 4%;
+    margin-top: 2%;
+}
+
+.cuadro_modificar_voluntario {
+    width: 650px;
+    height: 590px;
+    border: 5px solid #D4233F;
+    background: #E7E2CB;
+    padding-top: 2%;
+    margin-top: 3%;
 }
 
 
@@ -371,6 +407,18 @@ li:last-child {
     background-color: #e6dbd5;
     outline: none;
     resize: none;
+}
+
+.inputfiltro {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: black;
+    background-color: wheat;
+    outline: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 50px;
 }
 
 .lider {

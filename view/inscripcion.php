@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../js/validacion_login.js"></script>
 </head>
-<body>
+<body class="fondoimg">
     <div class="contenido">
         <div class="row flex-cv">
             <div class="cuadro_inscripcion">

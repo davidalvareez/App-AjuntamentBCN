@@ -1,6 +1,9 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    if (!$_SESSION['tipo_user']==2) {
+        header("location:login.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

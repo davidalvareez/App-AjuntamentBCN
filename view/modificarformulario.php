@@ -1,6 +1,9 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    if (!$_SESSION['tipo_user']==2) {
+        header("location:login.php");
+    }
     if (empty($_GET['evento'])){
         header("location:../view/listaeventosadmin.php");
     }else{
@@ -22,7 +25,7 @@
     <script src="../js/validacion_login.js"></script>
     <title>Modificar</title>
 </head>
-<body>
+<body class="fondoimg">
     <div class="contenido">
         <div class="row flex-cv">
             <div class="cuadro_modificar_evento">
