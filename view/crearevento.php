@@ -16,7 +16,7 @@
     <script src="../js/validacion_login.js"></script>
     <title>Modificar</title>
 </head>
-<body>
+<body class="fondoimg2">
     <div class="contenido">
         <div class="row flex-cv">
             <div class="cuadro_modificar_evento">

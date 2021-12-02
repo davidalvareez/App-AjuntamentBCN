@@ -19,7 +19,7 @@
     <div class="menu">
            <ul>
                <li>
-                   <a class="activo" href="../view/listaeventos.php">Eventos</a>
+                   <a class="activo" href="../view/listaeventosadmin.php">Eventos</a>
                </li>
                <li>
                    <a href="../view/eventosapuntado.php">¿A que me he apuntado?</a>
