@@ -30,7 +30,11 @@ define("USUARIO","usuario");
 define("PASSWORD","contraseña");
 define("BD","nombre base de datos");
 ```
-
+### Tambien necesitas los datos de inicio de sesion que son los siguientes
+```
+username: xavi@admin.com - david@admin.com
+password: 1234
+```
 Para instalar nuestro proyecto se puede hacer de dos maneras.
 1. Git clone en VISUAL STUDIO CODE --> Donde dice **CODE** en verde y obtienes este enlace https://github.com/davidalvareez/App-AjuntamentBCN.git
 2. Descargar el zip desde el github y descomprimirlo en una ubicación el zip se descarga donde dice **CODE** en verde y la opcion de zip

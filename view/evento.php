@@ -1,9 +1,11 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
-    /* Controla que la sesión esté iniciada */
-    //if (!$_SESSION['nombre']=="") {
-     $evento=$_GET['evento'];
+    if (empty($_GET['evento'])) {
+        header("location:listaeventos.php");
+    }else{
+        $evento=$_GET['evento'];
+    }
      if (empty($_SESSION['dni'])) {
          $dni='';
      }else{
@@ -20,7 +22,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Eventos</title>
 </head>
-<body>
+<body class="fondoimg">
     <div class="menu">
         <ul>
             <li>
@@ -38,6 +40,7 @@
         <div class="contenido_centrado">
             <table class="tabla_evento">
                 <?php
+                //Mostramos todos los datos del evento en especifico
                     $sentencia=$pdo->prepare("SELECT id,titulo,descripcion,img,DATE_FORMAT(fecha,'%d/%m/%Y') as fecha,TIME_FORMAT(hora,'%H:%i') as hora,capactual,capmax FROM tbl_eventos WHERE id=$evento");
                     $sentencia->execute();
                     $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -52,6 +55,7 @@
                             echo "<p>Numero de participantes: {$row['capactual']}/{$row['capmax']}</p>";
                             //Si la capacidad es igual que la máxima quitamos el boton de inscripción
                             if($row['capactual']==$row['capmax']){
+                                //Si la capacidad es igual a la maxima no habrá ningun boton de inscripción
                                 echo "";
                             }else{
                                 //En caso contrario ahora comprobamos si el usuario está inscrito en caso de que si le quitamos el boton y decimos que está inscrito
@@ -65,6 +69,7 @@
                                         <br><br>
                                     <?php
                                 }else{
+                                    //Si ha encontrado que el usuario está inscrito tendrá un boton de quitar inscripción
                                     ?>
                                         <button class="botonquitarinscripcion" onclick="location.href='../process/quitinscripcion.proc.php?evento=<?php echo $row['id']; ?>&dni=<?php echo $comprobacion[0]['dni']; ?>'">Quitar inscripcion</button>
                                     <?php

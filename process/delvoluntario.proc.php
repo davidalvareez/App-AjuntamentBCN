@@ -4,12 +4,13 @@ session_start();
 if (empty($_GET['dni'])) {
     header("location: ../view/listaeventosdmin.php");
 }else{
+    //Miramos el dni
     $dni=$_GET['dni'];
     $sentencia=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni=:dni");
     $sentencia->bindParam(":dni",$dni);
     $sentencia->execute();
     $comprobacion=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-    //Ahora miramos los eventos
+    //Ahora miramos los eventos donde estaba el usuario inscrito
     $eventos=$pdo->prepare("SELECT * FROM tbl_registroevento WHERE dni=:dni");
     $eventos->bindParam(":dni",$dni);
     $eventos->execute();
@@ -18,6 +19,7 @@ if (empty($_GET['dni'])) {
         header("location: ../view/listaeventosadmin.php");
     }else{
         try{
+            //Eliminamos registro evento del dni, el voluntario y reducimos la capacidad que hay en dicho evento
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->beginTransaction();
             $pdo->exec("DELETE FROM tbl_registroevento WHERE dni='{$dni}'");

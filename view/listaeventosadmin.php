@@ -1,6 +1,7 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    //Evitar que accedan desde url ya que es pagina admin
     if (!$_SESSION['tipo_user']==2) {
         header("location:login.php");
     }
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Eventos BCN</title>
 </head>
-<body>
+<body class="fondoimg">
     <table class="tablaadmin">
         <td class="menu_nombre_admin">
             <h2 class="h1eventos">Bienvenido: <?php echo $_SESSION['username']; ?> </h2></li>
@@ -29,6 +30,7 @@
     <div class="row flex-cv">
         <table class="tablaeventos">
             <?php
+                //Para mostrar todos los eventos
                 $sentencia=$pdo->prepare("SELECT id,titulo,descripcion,img,DATE_FORMAT(fecha,'%d/%m/%Y') as fecha FROM tbl_eventos");
                 $sentencia->execute();
                 $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -39,6 +41,7 @@
                         echo "<h2>{$row['titulo']}</h2>";
                         echo "<h2>{$row['fecha']}</h2>";
                         echo "<br>";
+                        //Si el usuario es admin se verá los botones de eliminar y modificar evento
                         if ($_SESSION['tipo_user']==2) {
                             echo "<td>";
                             ?>

@@ -14,6 +14,7 @@ if(empty($_GET['evento'])&&empty($$_GET['dni'])){
     if (empty($comprobacion)) {
         exit("No existe ningun registro");
     }else{
+        //Cuando quitamos la inscripcion quitamos el registro evento de ese evento y el dni ya que si no eliminamos todo y reducimos la capacidad
         try{
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->beginTransaction();

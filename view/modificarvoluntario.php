@@ -1,12 +1,15 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    //Evitar que accedan desde url ya que es pagina admin
     if (!$_SESSION['tipo_user']==2) {
         header("location:login.php");
     }
+    //O si no se puso DNI más de lo mismo
     if (empty($_GET['dni'])){
         header("location:../view/vistaparticipantes.php");
     }else{
+        //Esto es para recorrer todos los datos del voluntario a modificar
         $dni=$_GET['dni'];
         $sentencia=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni=:dni");
         $sentencia->BindParam(":dni",$dni);
@@ -34,9 +37,11 @@
                         <br>
                         <?php
                             if (empty($comprobacion)) {
+                                //Si la query fue mal nos vamos a la vista de nuevo
                                 header("location:../view/vistaparticipantes.php");
                             }else{
                                 foreach ($comprobacion as $row){
+                                    //Si fue bien guardamos todo en variable y los mostramos en los valores
                                     $dni=$row['dni'];
                                     $nombre=$row['nombre'];
                                     $apellido=$row['apellido'];

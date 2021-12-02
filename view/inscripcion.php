@@ -1,9 +1,12 @@
 <?php
     include '../services/conexion.php';
     session_start();
-    /* Controla que la sesión esté iniciada */
-    //if (!$_SESSION['nombre']=="") {
-    $evento=$_GET['evento'];
+    //Si intenta acceder al enlace por url le echamos
+    if(empty($_GET['evento'])){
+        header("location:listaeventos.php");
+    }else{
+        $evento=$_GET['evento'];
+    }
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +27,7 @@
                     <h1 class="h1login">¡Formulario de Inscripcion!</h1>
                     <br>
                     <?php
+                    //Lo que se verá a continuación es en caso que la sesion del voluntario esté iniciada se mostrara en el value y si no será vacio ya que sera la primera vez que entra.
                     if (empty($_SESSION['dni'])) {
                         ?>
                         <div class="form-element">
@@ -91,6 +95,7 @@
                     <button class="botonlogin" type="submit" name="login" value="login">Inscribirme</button>
                 </form>
                 <?php
+                //Esto es para coger el id del evento y redirigirlo para inscribirse
                     $sentencia=$pdo->prepare("SELECT id FROM tbl_eventos WHERE id=$evento");
                     $sentencia->execute();
                     $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);

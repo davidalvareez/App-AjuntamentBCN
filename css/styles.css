@@ -1,8 +1,9 @@
 /*estilos globales y letras*/
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: black;
 }
 
@@ -11,11 +12,11 @@ body {
     background-size: cover;
     background-attachment: fixed;
     text-align: center;
-    background-color: wheat;
+    background-color: white;
 }
 
 .fondoimg {
-    background-image: url('../img/img_login.jpg');
+    background-image: url('../img/fondoprueba.jpg');
 }
 
 .h1_eventos {
@@ -48,11 +49,9 @@ body {
 /*Barra de navegacion horizontal*/
 
 .menu {
-    width: 100%;
-    padding: 0;
-    top: 0;
-    width: 100%;
-    position: sticky;
+    width: 1000px;
+    margin-left: 13%;
+    padding-top: 2%;
 }
 
 ul {
@@ -60,40 +59,31 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #4D9C87;
+    background-color: cadetblue;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    text-decoration: none
+    text-decoration: none;
+    border-radius: 10px;
 }
 
 li {
     float: left;
+    width: 33.33%;
     text-decoration: none
 }
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #4CAF50;
+    background-color: rgb(167, 211, 212);
     text-decoration: none;
-}
-
-li:last-child {
-    border-right: none;
-    float: right;
-    text-decoration: none
-}
-
-.activo {
-    background-color: #4CAF50;
-    text-decoration: none
 }
 
 .td_espacioimg_eventos {
@@ -175,7 +165,7 @@ li:last-child {
     height: 45px;
     border-radius: 7px;
     border-color: #4D9C87;
-    background-color: wheat;
+    background-color: #F7F6FB;
     font-size: 15px;
     font-weight: 500;
     transition: all 1s ease;
@@ -234,7 +224,7 @@ li:last-child {
     height: 45px;
     border-radius: 7px;
     border-color: #D4233F;
-    background-color: wheat;
+    background-color: white;
     font-size: 15px;
     font-weight: 500;
     transition: all 1s ease;
@@ -252,7 +242,7 @@ li:last-child {
     height: 45px;
     border-radius: 7px;
     border-color: #1564cc;
-    background-color: wheat;
+    background-color: white;
     font-size: 15px;
     font-weight: 500;
     transition: all 1s ease;
@@ -287,7 +277,7 @@ li:last-child {
     height: 45px;
     border-radius: 7px;
     border-color: #D4233F;
-    background-color: wheat;
+    background-color: white;
     font-size: 15px;
     font-weight: 500;
     transition: all 1s ease;
@@ -304,7 +294,7 @@ li:last-child {
     height: 45px;
     border-radius: 7px;
     border-color: #4D9C87;
-    background-color: wheat;
+    background-color: #F7F6FB;
     font-size: 15px;
     font-weight: 500;
     transition: all 1s ease;
@@ -414,7 +404,7 @@ li:last-child {
     height: 45px;
     border-radius: 7px;
     border-color: black;
-    background-color: wheat;
+    background-color: #F7F6FB;
     outline: none;
     margin-top: 20px;
     margin-right: 10px;

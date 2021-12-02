@@ -10,14 +10,14 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
     $stmt->execute();
     $comprobacion=$stmt->fetchAll(PDO::FETCH_ASSOC);
     try {
+        //Si ha funcionado le ponemos tipo usuario administrador que es el 2 y el nombre del administrador
             if (!empty($comprobacion)) {
                 foreach ($comprobacion as $row) {
                     $_SESSION['username']=$row['nombre'];
                     $_SESSION['tipo_user']=2;
                  }   
-                //print_r($comprobacion);
-                $_SESSION['email']=$email;
                 header("location:../view/listaeventosadmin.php");
+                //En caso contrario le redirigimos a login
             }else {
                 header("location: ../view/login.php");
             }

@@ -1,3 +1,10 @@
+<?php
+    require_once '../services/conexion.php';
+    session_start();
+    if (!$_SESSION['tipo_user']==2) {
+        header("location:login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +40,7 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="number" min="500" max="9999" id="capmax" name="capmax" placeholder="Introduce la capacidad maxima del evento"/>
+                            <input class="inputlogin" type="number" min="1" max="9999" id="capmax" name="capmax" placeholder="Introduce la capacidad maxima del evento"/>
                         </div>
                         <br>
                         <div class="form-element">

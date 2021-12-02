@@ -1,6 +1,7 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    //En caso que no haya sesion del usuario le llevamos a que verifique su DNI
     if (empty($_SESSION['dni'])) {
         header("location:../view/verificarinscripcion.php");
         //echo "Primero verifica el DNI HDTPM";
@@ -17,7 +18,7 @@
         <link rel="stylesheet" href="../css/styles.css">
         <title>Eventos</title>
     </head>
-    <body>
+    <body class="fondoimg">
         <div class="menu">
             <ul>
                 <li>
@@ -36,6 +37,7 @@
             <h1 class= "h1_evento_registrado">Eventos a los que estoy apuntado/a</h1>
                 <table class="tabla_principal">
                     <?php
+                    //Si el usuario esta dentro preparamos una sentencia para que vea donde está inscrito
                         $eventosuser=$pdo->prepare("SELECT tbl_registroevento.dni,tbl_eventos.id,tbl_eventos.titulo,tbl_eventos.descripcion,tbl_eventos.img,date_format(tbl_eventos.fecha,'%d/%m/%Y') as fecha
                         FROM tbl_registroevento 
                         INNER JOIN tbl_eventos ON tbl_registroevento.id_evento=tbl_eventos.id
@@ -47,6 +49,7 @@
                             echo "No estas registrado a ningun evento";
                         }
                         else{
+                            //En caso que esté inscrito a algún evento mostramos los eventos a los que está registrado
                             foreach ($eventos as $row) {
                                 echo "<tr>";
                                 echo "<td class='td_espacioimg_eventos'><img class='imgevento' src='{$row['img']}'>";

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Eventos BCN</title>
 </head>
-<body>
+<body class="fondoimg">
     <div class="menu">
         <ul>
             <li>
@@ -29,6 +29,7 @@
         <h1 class="h1_eventos">TODOS LOS EVENTOS DISPONIBLES</h1>
         <table class="tabla_principal">
             <?php
+            //Sentencia para mostrar todos los eventos existentes
                 $sentencia=$pdo->prepare("SELECT id,titulo,descripcion,img,DATE_FORMAT(fecha,'%d/%m/%Y') as fecha FROM tbl_eventos");
                 $sentencia->execute();
                 $eventos=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -39,6 +40,7 @@
                         echo "<h1>{$row['titulo']}</h1>";
                         echo "<h1>{$row['fecha']}</h1>";
                         echo "<br>";
+                        //El boton es para saber más sobre dicho evento y hacer la inscripción
                     ?>
                         <button class="botongeneral" onclick="location.href='../view/evento.php?evento=<?php echo $row['id']; ?>'">Mas informacion</button>
                     <?php

@@ -1,12 +1,15 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    //Evitar que accedan desde url ya que es pagina admin
     if (!$_SESSION['tipo_user']==2) {
         header("location:login.php");
     }
+    //O si no se puso evento más de lo mismo
     if (empty($_GET['evento'])){
         header("location:../view/listaeventosadmin.php");
     }else{
+        //Esto es para recorrer todos los datos del evento a modificar
         $idevento=$_GET['evento'];
         $sentencia=$pdo->prepare("SELECT * FROM tbl_eventos WHERE id=:id");
         $sentencia->BindParam(":id",$idevento);
@@ -34,9 +37,11 @@
                         <br>
                         <?php
                             if (empty($comprobacion)) {
+                                //En caso que la query fuera mal lo llevamos a la lista de eventos de la zona admin
                                 header("location:../view/listaeventosadmin.php");
                             }else{
                                 foreach ($comprobacion as $row){
+                                    //Y si fue bien recogemos todos los datos y los ponemos en el formulario con la etiqueta value
                                     $titulo=$row['titulo'];
                                     $descripcion=$row['descripcion'];
                                     $fecha=$row['fecha'];
@@ -62,7 +67,7 @@
                         </div>
                         <br>
                         <div class="form-element">
-                            <input class="inputlogin" type="number" min="500" max="9999" id="capmax" name="capmax" value="<?php echo $capmaxima; ?>" placeholder="Introduce la capacidad maxima del evento"/>
+                            <input class="inputlogin" type="number" min="3" max="9999" id="capmax" name="capmax" value="<?php echo $capmaxima; ?>" placeholder="Introduce la capacidad maxima del evento"/>
                         </div>
                         <br>
                         <div class="form-element">

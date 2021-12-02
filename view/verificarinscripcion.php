@@ -24,6 +24,7 @@
                     </div>
             </form>
             <?php
+            //En caso que accedio al formulario mediante enlace de evento mostramos boton volver evento
             if (!empty($_GET['evento'])){
                 $evento=$_GET['evento'];
                 ?>
@@ -31,6 +32,7 @@
                 <?php
             }
             else {
+                //En caso que accedio al formulario mediante verificar dni ya que no se inició sesion pues mostramos el login de volver a la lista de eventos
                 ?>
                 <button class="botonloginvolver" onclick="location.href='../view/listaeventos.php'" type="submit" name="volver" value="volver">Volver a la lista de eventos</button>
                 <?php

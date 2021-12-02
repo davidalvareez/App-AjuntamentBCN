@@ -10,6 +10,7 @@ if(empty($_POST['dni'])){
     $nombre=$_POST['nombre'];
     $apellido=$_POST['apellido'];
     $telefono=$_POST['telefono'];
+    //Ejecutamos la sentencia de actualizar voluntario con dicho dni
     $sentencia=$pdo->prepare("UPDATE tbl_voluntario SET nombre='{$nombre}',apellido='{$apellido}',telefono='{$telefono}' WHERE dni='{$dni}'");
     $sentencia->execute();
     header("location:../view/vistaparticipantes.php");

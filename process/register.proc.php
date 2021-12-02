@@ -11,11 +11,13 @@
     $dni=strtoupper($_POST['dni']);
     $letra = substr($dni, -1);
 	$numeros = substr($dni, 0, -1);
+    //Comprobamos si el dni es correcto o no
 	if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
         $_SESSION['dni']=$dni;
 	}else{
-        //No sabemos que hacer con el por ahora se deja así
-        exit("Te has inventado el dni, te denuncio a la policia");
+        //En caso incorrecto le mostramos en una pantalla lo siguiente y tendrá que volver atrás
+        exit(header("location: ../view/dniinventado.php"));
+        
 	}
     $evento=$_POST['evento'];
     //Comprobamos si el DNI existe
@@ -24,8 +26,7 @@
     $consulta->execute();
     $validardni=$consulta->fetchAll(PDO::FETCH_ASSOC);
     if (empty($validardni)) {
-        echo "No existe dni";
-        //Insertar voluntario a base de datos
+        //Insertar voluntario a base de datos con todos sus registros le metemos el registro evento y la tabla evento le sumamos una capacidad
         try{
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->beginTransaction();
@@ -40,6 +41,7 @@
             echo "Fallo: " . $e->getMessage();
         }
     }else{
+        //Simplemento lo metemos en el evento sin registrar voluntario ya que el dni es unico entonces con que ya existe simplemento hacemos ese proceso
         try{
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->beginTransaction();

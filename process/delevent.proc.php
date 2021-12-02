@@ -9,9 +9,11 @@ if (empty($_GET['evento'])) {
     $sentencia->bindParam(":id",$idevento);
     $sentencia->execute();
     $comprobacion=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+    //Si el evento no existe directamente le redirigimos
     if (empty($comprobacion)) {
         header("location: ../view/listaeventosadmin.php");
     }else{
+        //En caso que si eliminamos los registros eventos de dicho y evento y el evento en especifico
         try{
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $pdo->beginTransaction();

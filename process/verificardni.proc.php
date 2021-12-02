@@ -1,5 +1,4 @@
 <?php
-//echo "Aqui verificamos el DNI";
 require_once '../services/conexion.php';
 session_start();
 if(isset($_POST['dni'])){
@@ -9,10 +8,10 @@ if(isset($_POST['dni'])){
 }else {
     header("location: ../view/verificarinscripcion.php");
 }
+//Comprobamos que el dni no esté inventado
 if (substr("TRWAGMYFPDXBNJZSQVHLCKE", $numeros%23, 1) == $letra && strlen($letra) == 1 && strlen ($numeros) == 8 ){
 }else{
-    //No sabemos que hacer con el por ahora se deja así
-    exit("Te has inventado el dni, te denuncio a la policia");
+    header("location: ../view/dniinventado.php");
 }
 $existdni=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni=:dni");
 $existdni->bindParam(':dni',$dni);
@@ -21,6 +20,7 @@ $verificarexistdni=$existdni->fetchAll(PDO::FETCH_ASSOC);
 if(empty($verificarexistdni)){
     header("location: ../view/verificarinscripcion.php");
 }else {
+    //Si encontro el dni le metemos todos los datos en la sesion ya que eso sirve cuando se inscriba ya aparezca todos sus datos
     foreach ($verificarexistdni as $row){
         $_SESSION['dni']=$dni;
         $_SESSION['nombre']=$row['nombre'];

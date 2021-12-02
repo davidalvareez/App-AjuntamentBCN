@@ -1,6 +1,7 @@
 <?php
     require_once '../services/conexion.php';
     session_start();
+    //Si intentan entrar con la url no podrá acceder ya que no está guardado el tipo de usuario
     if (!$_SESSION['tipo_user']==2) {
         header("location:login.php");
     }
@@ -14,8 +15,7 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Vista de participantes</title>
 </head>
-<body>
-<body class="fondosala2">
+<body class="fondoimg">
     <div class="menu">
            <ul>
                <li>
@@ -38,10 +38,12 @@
             <table class="tabla_principal">
             <?php
             if (isset($_POST['filtrar'])){
+                //Si le hemos dado al boton de filtrar añadimos la sentencia del filtro mediante DNI ya que es único
                 $voluntario=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni LIKE '%{$_POST['dni']}%'");
                 $voluntario->execute();
                 $voluntarios=$voluntario->fetchAll(PDO::FETCH_ASSOC);
                 if (empty($voluntarios)) {
+                    //En caso que el filtro encuentre vacio mostrará lo siguiente y en caso contrario el header de la tabla
                     echo "<h1>No se ha encontrado ningun voluntario</h1>";
                 }else{
                     ?>
@@ -53,10 +55,12 @@
                      <?php
                 }
             }else{
+                //Sin filtro simplemente mostramos todos los voluntarios
                 $voluntario=$pdo->prepare("SELECT * FROM tbl_voluntario");
                 $voluntario->execute();
                 $voluntarios=$voluntario->fetchAll(PDO::FETCH_ASSOC);
                 if (empty($voluntarios)) {
+                    //Y en caso de la página aún no haya ningun voluntario mostramos que no hay y si hay mostramos encabezado de tabla
                     echo "<h1>No hay ningun voluntario</h1>";
                 }else{
                     ?>
@@ -70,6 +74,7 @@
             }
             ?>
                <?php
+               //Mostramos todos los datos
                     foreach ($voluntarios as $row) {
                 ?>
                 <tr>
