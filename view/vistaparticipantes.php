@@ -16,15 +16,12 @@
     <title>Vista de participantes</title>
 </head>
 <body class="fondoimg">
-    <div class="menu">
+    <div class="menuadmin">
            <ul>
-               <li>
+               <li class="liadmin">
                    <a class="activo" href="../view/listaeventosadmin.php">Eventos</a>
                </li>
-               <li>
-                   <a href="../view/eventosapuntado.php">¿A que me he apuntado?</a>
-               </li>
-               <li>
+               <li class="liadmin">
                    <a href="../process/logout.proc.php">Logout</a>
                </li>
            </ul>     

@@ -68,6 +68,12 @@ body {
     padding-top: 2%;
 }
 
+.menuadmin {
+    width: 1000px;
+    margin-left: 13%;
+    padding-top: 2%;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -84,7 +90,13 @@ ul {
 li {
     float: left;
     width: 33.33%;
-    text-decoration: none
+    text-decoration: none;
+}
+
+.liadmin {
+    float: left;
+    width: 50%;
+    text-decoration: none;
 }
 
 li a {
