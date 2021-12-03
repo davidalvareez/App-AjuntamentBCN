@@ -17,7 +17,7 @@
         $_SESSION['dni']=$dni;
 	}else{
         //En caso incorrecto le mostramos en una pantalla lo siguiente y tendrá que volver atrás
-        exit(header("location: ../view/dniinventado.php?evento=$evento"));
+        exit(header("location: ../view/dniinventado.php"));
         
 	}
 
