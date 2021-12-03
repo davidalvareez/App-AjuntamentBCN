@@ -11,6 +11,7 @@
     <div class="row flex-cv">
         <div class="cuadro_dni_falso">
             <h1 class="avisodni">El DNI no es valido, por favor, ingrese un DNI correcto.</h1>
+            <button class="botonloginvolver" onclick="location.href='../view/listaeventos.php'" type="submit" name="volver" value="volver">Volver al formulario de inscripción</button>
         </div>
     </div>
 </body>

@@ -9,6 +9,7 @@
     $telefono=$_POST['telefono'];
     $_SESSION['telefono']=$telefono;
     $dni=strtoupper($_POST['dni']);
+    $evento=$_POST['evento'];
     $letra = substr($dni, -1);
 	$numeros = substr($dni, 0, -1);
     //Comprobamos si el dni es correcto o no
@@ -16,10 +17,10 @@
         $_SESSION['dni']=$dni;
 	}else{
         //En caso incorrecto le mostramos en una pantalla lo siguiente y tendrá que volver atrás
-        exit(header("location: ../view/dniinventado.php"));
+        exit(header("location: ../view/dniinventado.php?evento=$evento"));
         
 	}
-    $evento=$_POST['evento'];
+
     //Comprobamos si el DNI existe
     $consulta=$pdo->prepare("SELECT * FROM tbl_voluntario WHERE dni = :dni");   
     $consulta->bindParam(':dni', $dni);
